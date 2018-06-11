@@ -37,6 +37,7 @@ module.exports = function (app) {
   events.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
+    models.Users.hasMany(models.Events, {foreignKey: "userId"});
   };
 
   return events;
