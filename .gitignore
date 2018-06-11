@@ -1,4 +1,5 @@
 .env
+db_conn_string
 
 # Logs
 logs
