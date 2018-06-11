@@ -1,6 +1,7 @@
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 const Sequelize = require('sequelize');
+const uuid4 = require('uuid/v4');
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
@@ -9,7 +10,8 @@ module.exports = function (app) {
       type: Sequelize.UUID,
       allowNull: false,
       unique: true,
-      primaryKey: true
+      primaryKey: true,
+      defaultValue: uuid4()
     },
     username: {
       type: Sequelize.STRING(64),
