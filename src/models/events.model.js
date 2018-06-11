@@ -20,7 +20,7 @@ module.exports = function (app) {
       allowNull: false,
     },
     capacity: {
-      type: Sequelize.Integer
+      type: Sequelize.INTEGER
     },
     eventDescription: {
       type: Sequelize.TEXT("medium")
@@ -30,7 +30,8 @@ module.exports = function (app) {
       beforeCount(options) {
         options.raw = true;
       }
-    }
+    },
+    timestamps: false
   });
 
   events.associate = function (models) { // eslint-disable-line no-unused-vars
