@@ -1,14 +1,29 @@
 // See http://docs.sequelizejs.com/en/latest/docs/models-definition/
 // for more of what you can do here.
 const Sequelize = require('sequelize');
-const DataTypes = Sequelize.DataTypes;
 
 module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
-  const events = sequelizeClient.define('events', {
-    text: {
-      type: DataTypes.STRING,
+  const events = sequelizeClient.define('Events', {
+    eventId: {
+      type: Sequelize.STRING(128),
+      allowNull: false,
+      unique: true,
+      primaryKey: true
+    },
+    eventTitle: {
+      type: Sequelize.STRING(32),
       allowNull: false
+    },
+    eventDate: {
+      type: Sequelize.DATE,
+      allowNull: false,
+    },
+    capacity: {
+      type: Sequelize.Integer
+    },
+    eventDescription: {
+      type: Sequelize.TEXT("medium")
     }
   }, {
     hooks: {
