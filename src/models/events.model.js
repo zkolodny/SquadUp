@@ -22,6 +22,10 @@ module.exports = function (app) {
     capacity: {
       type: Sequelize.INTEGER
     },
+    currentCapacity: {
+      type: Sequelize.INTEGER,
+      defaultValue: 1
+    },
     eventDescription: {
       type: Sequelize.TEXT("medium")
     }
