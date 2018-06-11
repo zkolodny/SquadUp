@@ -1,7 +1,5 @@
 .env
 
-default.json
-
 # Logs
 logs
 *.log
