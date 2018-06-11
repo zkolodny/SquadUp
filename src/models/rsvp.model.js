@@ -19,8 +19,19 @@ module.exports = function (app) {
   rsvp.associate = function (models) { // eslint-disable-line no-unused-vars
     // Define associations here
     // See http://docs.sequelizejs.com/en/latest/docs/associations/
-    models.Users.belongsToMany(models.Events, {as: "Attendee", through: "RSVPs", foreignKey: "userId", primaryKey: true});
-    models.Events.belongsToMany(models.Users, {as: "Attending", through: "RSVPs", foreignKey: "eventId", primaryKey: true});
+    models.Users.belongsToMany(models.Events, {
+      as: "Attendee",
+      through: "RSVPs",
+      foreignKey: "userId",
+      primaryKey: true
+    });
+
+    models.Events.belongsToMany(models.Users, {
+      as: "Attending",
+      through: "RSVPs",
+      foreignKey: "eventId",
+      primaryKey: true
+    });
   };
 
   return rsvp;
