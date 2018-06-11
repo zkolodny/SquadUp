@@ -6,7 +6,7 @@ module.exports = function (app) {
   const sequelizeClient = app.get('sequelizeClient');
   const events = sequelizeClient.define('Events', {
     eventId: {
-      type: Sequelize.STRING(128),
+      type: Sequelize.UUID,
       allowNull: false,
       unique: true,
       primaryKey: true
