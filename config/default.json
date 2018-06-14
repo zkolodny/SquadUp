@@ -5,5 +5,29 @@
   "paginate": {
     "default": 10,
     "max": 50
+  },
+  "authentication": {
+    "secret": "7f4b4695529a7275c2b2c8f7f443f585a791bffbc91415501b99ad871688a7b7c5872fe6289176647db2790437e5fa5bfe35b71e813a48584828d5bdd9587991223196d902b7e885d20e952981ace64a8eae969bef92d5993395424519e4a6cbf01ee140995df21dd6088a79762ce708b3f5e26f47f31de980049e4f5e9b7be74bdc93413f14c4ddebf9e36f0aca2f3ffb5f6c52cbe5ce22ac36926ff3e45fd1127ddace248b0839ca9351d34da000703fd48207532b9d58712296845cad395cad81e242b911417eeb50b81a2de216b5136149a401d871a4d2709b945eb0d23718240c8d48fd5d40a7f747fa641e355258c810be4fac81272ffec799b774cbb0",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "squaders",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
   }
 }
