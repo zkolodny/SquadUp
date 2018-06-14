@@ -17,6 +17,11 @@ module.exports = function (app) {
       type: Sequelize.STRING(64),
       allowNull: false,
       unique: true
+    },
+    email : {
+      type: Sequelize.STRING(64),
+      allowNull: false,
+      unique: true
     }
   }, {
     hooks: {
