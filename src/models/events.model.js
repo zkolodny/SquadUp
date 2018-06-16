@@ -10,8 +10,7 @@ module.exports = function (app) {
       type: Sequelize.UUID,
       allowNull: false,
       unique: true,
-      primaryKey: true,
-      defaultValue: uuid4()
+      primaryKey: true
     },
     eventTitle: {
       type: Sequelize.STRING(32),
